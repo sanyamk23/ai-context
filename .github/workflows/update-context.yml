@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install ai-context
-        run: pip install ai-context
+      - name: Install ai-context from source
+        run: pip install .
 
       - name: Generate CLAUDE.md
         run: ai-context generate -o CLAUDE.md
