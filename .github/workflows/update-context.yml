@@ -1,0 +1,41 @@
+name: Update AI Context
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install ai-context
+        run: pip install ai-context
+
+      - name: Generate CLAUDE.md
+        run: ai-context generate -o CLAUDE.md
+
+      - name: Generate .cursorrules
+        run: ai-context generate --format cursor -o .cursorrules
+
+      - name: Generate Copilot instructions
+        run: |
+          mkdir -p .github
+          ai-context generate --format copilot -o .github/copilot-instructions.md
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CLAUDE.md .cursorrules .github/copilot-instructions.md
+          git diff --cached --quiet || git commit -m "chore: update AI context files [skip ci]"
+          git push
