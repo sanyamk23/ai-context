@@ -1,0 +1,23 @@
+# {{ project_name }}
+
+{{ project_description }}
+
+## Tech Stack
+{% for lang, count in languages.items() %}- **{{ lang }}** ({{ count }} files){% endfor %}
+
+## Architecture
+{{ architecture_overview }}
+
+## Entry Points
+{% for ep in entry_points %}- `{{ ep }}`
+{% endfor %}
+
+## Conventions
+- Naming: {{ naming_convention }}
+- Indentation: {{ indentation }}
+- Quotes: {{ quote_style }}
+{% if testing_style %}- Testing: {{ testing_style }}{% endif %}
+
+## Patterns
+{% for pattern in patterns %}- {{ pattern }}
+{% endfor %}

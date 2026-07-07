@@ -1,0 +1,26 @@
+You are working on {{ project_name }}: {{ project_description }}
+
+Tech Stack:
+{% for lang, count in languages.items() %}- {{ lang }} ({{ count }} files){% endfor %}
+
+Architecture: {{ architecture_overview }}
+
+Key entry points: {% for ep in entry_points %}{{ ep }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+Project Structure:
+{{ directory_tree }}
+
+Dependencies ({{ deps_manager }}): {% for dep in core_deps %}{{ dep.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+Conventions:
+- Naming: {{ naming_convention }}
+- Indentation: {{ indentation }}
+- Quotes: {{ quote_style }}
+{% if has_type_hints %}- Uses type hints{% endif %}
+{% if testing_style %}- Testing: {{ testing_style }}{% endif %}
+
+Patterns: {{ patterns | join(', ') }}
+
+{% if gotchas %}Gotchas:
+{% for g in gotchas %}- {{ g }}
+{% endfor %}{% endif %}

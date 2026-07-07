@@ -1,0 +1,52 @@
+# {{ project_name }}
+
+{{ project_description }}
+
+## Tech Stack
+{% for lang, count in languages.items() %}- **{{ lang }}** ({{ count }} files){% endfor %}
+
+## Architecture
+{{ architecture_overview }}
+
+## Key Entry Points
+{% for ep in entry_points %}- `{{ ep }}`
+{% endfor %}
+
+## Project Structure
+```
+{{ directory_tree }}
+```
+
+## Dependencies
+{% if deps_manager %}**{{ deps_manager }}** — {{ total_deps }} dependencies{% if dev_deps_count %} ({{ dev_deps_count }} dev){% endif %}{% endif %}
+
+### Core Dependencies
+{% for dep in core_deps %}- `{{ dep.name }}` {{ dep.version }}
+{% endfor %}
+
+## Code Conventions
+- **Naming:** {{ naming_convention }}
+- **Indentation:** {{ indentation }}
+- **Quote style:** {{ quote_style }}
+{% if has_type_hints %}
+- **Type hints:** Yes
+{% endif %}{% if has_docstrings %}
+- **Docstrings:** Yes
+{% endif %}{% if testing_style %}
+- **Testing:** {{ testing_style }}
+{% endif %}
+
+## Patterns
+{% for pattern in patterns %}- {{ pattern }}
+{% endfor %}
+
+{% if gotchas %}
+## Important Notes
+{% for gotcha in gotchas %}- {{ gotcha }}
+{% endfor %}
+{% endif %}
+
+## Testing
+{% if test_framework %}Framework: **{{ test_framework }}**{% endif %}
+Test files: {{ test_count }} files
+{% if test_location %}Location: `{{ test_location }}`{% endif %}
