@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="720" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f0b21"/>
+      <stop offset="100%" stop-color="#1a1145"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <clipPath id="r"><rect width="720" height="440" rx="16"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#r)">
+    <rect width="720" height="440" fill="url(#bg)"/>
+
+    <!-- Title bar -->
+    <rect width="720" height="48" fill="#1e1b4b" opacity="0.6"/>
+    <circle cx="24" cy="24" r="7" fill="#ff5f57"/>
+    <circle cx="48" cy="24" r="7" fill="#febc2e"/>
+    <circle cx="72" cy="24" r="7" fill="#28c840"/>
+    <text x="360" y="30" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">Terminal — contextly</text>
+
+    <!-- Command prompt -->
+    <text x="24" y="90" font-family="SF Mono, Menlo, monospace" font-size="14" fill="#22d3ee">$</text>
+    <text x="42" y="90" font-family="SF Mono, Menlo, monospace" font-size="14" fill="#e2e8f0">contextly generate</text>
+
+    <!-- Output lines -->
+    <text x="24" y="130" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#818cf8">  contextly</text>
+    <text x="132" y="130" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">— analyzing</text>
+    <text x="252" y="130" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#e2e8f0">my-fullstack-app/</text>
+
+    <text x="24" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">  Found</text>
+    <text x="90" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#e2e8f0" font-weight="bold">347 files</text>
+    <text x="176" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">(</text>
+    <text x="184" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#e2e8f0">264 source</text>
+    <text x="290" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">,</text>
+    <text x="300" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#e2e8f0">68 tests</text>
+    <text x="372" y="160" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">)</text>
+
+    <text x="24" y="186" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#34d399">  Generated</text>
+    <text x="134" y="186" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#e2e8f0" font-weight="bold">CLAUDE.md</text>
+
+    <!-- Stats box -->
+    <rect x="20" y="205" width="680" height="130" rx="10" fill="#1e1b4b" opacity="0.7" stroke="#334155" stroke-width="1"/>
+
+    <text x="360" y="230" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#818cf8" font-weight="bold">GENERATION STATS</text>
+
+    <!-- Stats grid -->
+    <text x="48" y="262" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Format</text>
+    <text x="148" y="262" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#e2e8f0">claude</text>
+
+    <text x="48" y="282" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Output</text>
+    <text x="148" y="282" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#e2e8f0">CLAUDE.md</text>
+
+    <text x="48" y="302" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Files analyzed</text>
+    <text x="176" y="302" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#e2e8f0">347</text>
+
+    <text x="48" y="322" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Context tokens</text>
+    <text x="176" y="322" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#e2e8f0" font-weight="bold">342</text>
+
+    <!-- Right side: big number -->
+    <text x="500" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="url(#accent)">98.6%</text>
+    <text x="500" y="314" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#94a3b8">fewer tokens</text>
+
+    <!-- Divider line -->
+    <line x1="350" y1="248" x2="350" y2="328" stroke="#334155" stroke-width="1"/>
+
+    <!-- Source tokens -->
+    <text x="380" y="262" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Source tokens</text>
+    <text x="500" y="262" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#f87171">24,100</text>
+
+    <text x="380" y="282" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#94a3b8">Tokens saved</text>
+    <text x="500" y="282" font-family="SF Mono, Menlo, monospace" font-size="12" fill="#34d399">23,758</text>
+
+    <!-- Bottom CTA -->
+    <text x="24" y="410" font-family="SF Mono, Menlo, monospace" font-size="14" fill="#22d3ee">$</text>
+    <text x="42" y="410" font-family="SF Mono, Menlo, monospace" font-size="14" fill="#e2e8f0">contextly cost</text>
+    <text x="198" y="410" font-family="SF Mono, Menlo, monospace" font-size="13" fill="#34d399">→ saves $142/mo for a 10-person team on Claude Sonnet 4</text>
+  </g>
+</svg>
