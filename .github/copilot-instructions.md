@@ -1,4 +1,4 @@
-# ai-context
+# contextly
 
 Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
 
@@ -8,7 +8,7 @@ Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
 Built with pip. Small codebase (15 source files). Has 5 test files (3:1 source-to-test ratio).
 
 ## Entry Points
-- `ai_context/cli.py`
+- `contextly/cli.py`
 
 ## Conventions
 - Naming: PascalCase

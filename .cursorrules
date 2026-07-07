@@ -1,20 +1,21 @@
-You are working on ai-context: Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
+You are working on contextly: Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
 
 Tech Stack:
 - Python (20 files)
 Architecture: Built with pip. Small codebase (15 source files). Has 5 test files (3:1 source-to-test ratio).
 
-Key entry points: ai_context/cli.py
+Key entry points: contextly/cli.py
 Project Structure:
 ├── .editorconfig
 ├── .github
+│   ├── copilot-instructions.md
 │   └── workflows
 │       └── update-context.yml
 ├── .gitignore
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
-├── ai_context
+├── contextly
 │   ├── __init__.py
 │   ├── analyzer
 │   │   ├── __init__.py
@@ -43,8 +44,7 @@ Project Structure:
 │   └── sample_output.md
 ├── launch
 │   ├── devto.md
-│   ├── hacker-news.md
-  ... and 9 more
+  ... and 10 more
 
 Dependencies (pip): click, jinja2, rich, pathspec
 Conventions:

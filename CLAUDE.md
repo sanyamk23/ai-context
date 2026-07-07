@@ -1,4 +1,4 @@
-# ai-context
+# contextly
 
 Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
 
@@ -8,19 +8,20 @@ Generate optimized AI context for your codebase. Save 60-80% on AI coding costs.
 Built with pip. Small codebase (15 source files). Has 5 test files (3:1 source-to-test ratio).
 
 ## Key Entry Points
-- `ai_context/cli.py`
+- `contextly/cli.py`
 
 ## Project Structure
 ```
 ├── .editorconfig
 ├── .github
+│   ├── copilot-instructions.md
 │   └── workflows
 │       └── update-context.yml
 ├── .gitignore
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
-├── ai_context
+├── contextly
 │   ├── __init__.py
 │   ├── analyzer
 │   │   ├── __init__.py
@@ -49,8 +50,7 @@ Built with pip. Small codebase (15 source files). Has 5 test files (3:1 source-t
 │   └── sample_output.md
 ├── launch
 │   ├── devto.md
-│   ├── hacker-news.md
-  ... and 9 more
+  ... and 10 more
 ```
 
 ## Dependencies
