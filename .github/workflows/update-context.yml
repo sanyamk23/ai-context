@@ -18,19 +18,19 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install ai-context from source
+      - name: Install contextly from source
         run: pip install .
 
       - name: Generate CLAUDE.md
-        run: ai-context generate -o CLAUDE.md
+        run: contextly generate -o CLAUDE.md
 
       - name: Generate .cursorrules
-        run: ai-context generate --format cursor -o .cursorrules
+        run: contextly generate --format cursor -o .cursorrules
 
       - name: Generate Copilot instructions
         run: |
           mkdir -p .github
-          ai-context generate --format copilot -o .github/copilot-instructions.md
+          contextly generate --format copilot -o .github/copilot-instructions.md
 
       - name: Commit if changed
         run: |

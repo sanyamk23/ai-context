@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from ai_context.analyzer.scanner import ScanResult
+from contextly.analyzer.scanner import ScanResult
 
 
 @dataclass

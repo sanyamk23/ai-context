@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-from ai_context.utils.ignore import FileFilter
+from contextly.utils.ignore import FileFilter
 
 
 @dataclass

@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ai-context"
+name = "contextly"
 version = "0.1.0"
 description = "Generate optimized AI context for your codebase. Save 60-80% on AI coding costs."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
-authors = [{ name = "ai-context contributors" }]
+authors = [{ name = "contextly contributors" }]
 keywords = [
     "ai",
     "llm",
@@ -20,6 +20,7 @@ keywords = [
     "token",
     "cost",
     "developer-tools",
+    "code-generation",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -47,15 +48,15 @@ dev = ["pytest>=7.0", "pytest-cov>=4.0"]
 tiktoken = ["tiktoken>=0.7"]
 
 [project.scripts]
-ai-context = "ai_context.cli:main"
+contextly = "contextly.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/anthropics/ai-context"
-Repository = "https://github.com/anthropics/ai-context"
-Issues = "https://github.com/anthropics/ai-context/issues"
+Homepage = "https://github.com/sanyamk23/contextly"
+Repository = "https://github.com/sanyamk23/contextly"
+Issues = "https://github.com/sanyamk23/contextly/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["ai_context"]
+packages = ["contextly"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

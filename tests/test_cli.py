@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 from click.testing import CliRunner
 
-from ai_context.cli import main
+from contextly.cli import main
 
 
 @pytest.fixture
@@ -59,7 +59,7 @@ def test_index():
 def test_cli_version(runner: CliRunner) -> None:
     result = runner.invoke(main, ["--version"])
     assert result.exit_code == 0
-    assert "ai-context" in result.output
+    assert "contextly" in result.output
 
 
 def test_cli_generate_claude(runner: CliRunner, sample_project: Path) -> None:

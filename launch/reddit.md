@@ -1,35 +1,44 @@
 # Reddit — r/programming Post
 
 ## Title:
-I built ai-context: a CLI that generates optimized context for AI coding tools, saving 95% on context tokens
+I built contextly: your AI tools are reading your entire codebase every session. That's expensive. Here's a fix.
 
 ## Body:
 
-**The problem:** Every time you start a Claude Code, Cursor, or Copilot session, the AI wastes thousands of tokens reading your codebase to understand the architecture, conventions, and patterns. For a team of 10 developers, that's hundreds of dollars per month in pure waste.
+**The problem:** Every time you start a Claude Code, Cursor, or Copilot session, the AI wastes 5,000-25,000 tokens reading your codebase to understand the architecture, conventions, and patterns. For a solo developer, that's $15-30/month. For a team of 10, it's $300-800/month — just for context loading.
 
-**What ai-context does:**
+**What contextly does:**
 
 1. Scans your codebase (respecting .gitignore)
 2. Analyzes code patterns via AST (Python, JS, TS, Go, Rust...)
-3. Detects conventions, test frameworks, dependencies
+3. Detects conventions, test frameworks, dependencies, patterns
 4. Generates a compact (~300 token) context document
 
 **Supported tools:**
-- `ai-context generate` → CLAUDE.md (for Claude Code)
-- `ai-context generate --format cursor` → .cursorrules
-- `ai-context generate --format copilot` → .github/copilot-instructions.md
+- `contextly generate` → CLAUDE.md (for Claude Code)
+- `contextly generate --format cursor` → .cursorrules
+- `contextly generate --format copilot` → .github/copilot-instructions.md
 
-**Other features:**
-- `ai-context cost` — shows exact $ savings per AI provider
-- `ai-context analyze` — detailed codebase analysis
-- `ai-context check` — CI integration to verify context freshness
+**What gets detected:**
+- Tech stack and architecture patterns (MVC, Service/Repository, etc.)
+- Code conventions (naming, indentation, quotes, type hints)
+- Dependencies with versions (pyproject.toml, package.json, Cargo.toml, go.mod)
+- Entry points and project structure
+- Test framework and location
+- Gotchas (missing tests, large files, multi-language complexity)
 
 **Results on a real project:**
-- Without context: ~6,900 tokens to explain codebase
-- With ai-context: ~295 tokens
-- **95.7% token reduction**
+- Without context: ~24,100 tokens to explain codebase
+- With contextly: ~342 tokens
+- **98.6% token reduction**
 
-GitHub: https://github.com/sanyamk23/ai-context
+**Other features:**
+- `contextly cost` — shows exact $ savings per AI provider
+- `contextly analyze` — detailed codebase analysis
+- `contextly check` — CI integration to verify context freshness
+- GitHub Action included for auto-updating context on push
+
+GitHub: https://github.com/sanyamk23/contextly
 
 Would appreciate feedback on:
 1. What other AI coding cost problems should this solve?

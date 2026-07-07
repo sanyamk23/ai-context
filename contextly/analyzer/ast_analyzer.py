@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-from ai_context.analyzer.scanner import FileInfo
+from contextly.analyzer.scanner import FileInfo
 
 
 @dataclass

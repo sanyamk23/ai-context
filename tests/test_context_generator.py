@@ -4,11 +4,11 @@ from pathlib import Path
 
 import pytest
 
-from ai_context.analyzer.ast_analyzer import AnalysisResult
-from ai_context.analyzer.deps import DepsResult, DependencyInfo
-from ai_context.analyzer.patterns import Conventions
-from ai_context.analyzer.scanner import ScanResult, FileInfo
-from ai_context.generator.context import ContextBuilder, generate_context
+from contextly.analyzer.ast_analyzer import AnalysisResult
+from contextly.analyzer.deps import DepsResult, DependencyInfo
+from contextly.analyzer.patterns import Conventions
+from contextly.analyzer.scanner import ScanResult, FileInfo
+from contextly.generator.context import ContextBuilder, generate_context
 
 
 @pytest.fixture

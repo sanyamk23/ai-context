@@ -7,12 +7,12 @@ from typing import Optional
 
 from jinja2 import Environment, FileSystemLoader, PackageLoader
 
-from ai_context.analyzer.ast_analyzer import AnalysisResult
-from ai_context.analyzer.deps import DepsResult
-from ai_context.analyzer.patterns import Conventions
-from ai_context.analyzer.scanner import ScanResult
-from ai_context.generator.token_counter import count_tokens_approx, format_tokens
-from ai_context.utils.git import get_languages
+from contextly.analyzer.ast_analyzer import AnalysisResult
+from contextly.analyzer.deps import DepsResult
+from contextly.analyzer.patterns import Conventions
+from contextly.analyzer.scanner import ScanResult
+from contextly.generator.token_counter import count_tokens_approx, format_tokens
+from contextly.utils.git import get_languages
 
 
 TEMPLATE_MAP = {
@@ -52,7 +52,7 @@ class ContextBuilder:
             raise ValueError(f"Unknown format: {fmt}. Available: {list(TEMPLATE_MAP.keys())}")
 
         env = Environment(
-            loader=PackageLoader("ai_context", "generator/templates"),
+            loader=PackageLoader("contextly", "generator/templates"),
             trim_blocks=True,
             lstrip_blocks=True,
         )

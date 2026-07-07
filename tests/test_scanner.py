@@ -5,7 +5,7 @@ import tempfile
 
 import pytest
 
-from ai_context.analyzer.scanner import scan_codebase, EXTENSION_LANG
+from contextly.analyzer.scanner import scan_codebase, EXTENSION_LANG
 
 
 @pytest.fixture

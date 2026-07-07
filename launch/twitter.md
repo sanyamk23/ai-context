@@ -1,63 +1,67 @@
 # Twitter/X Launch Thread
 
 ## Tweet 1 (hook):
-I was wasting $50+/month on Claude Code tokens just re-explaining my codebase every session.
+Your AI coding tool is reading your ENTIRE codebase every session.
 
-So I built ai-context — it scans your repo once and generates a ~300 token context file that tells the AI everything it needs.
+That's 5,000-25,000 tokens of pure waste — every. single. time.
 
-95% fewer context tokens. `pip install ai-context`
+I built contextly to fix this:
+`pip install contextly`
+
+One scan. One file. 98% fewer tokens. Same quality.
 
 🧵
 
 ## Tweet 2 (problem):
-The problem every AI coder faces:
+Here's what happens every time you start a Claude Code session:
 
-Every new Claude Code / Cursor / Copilot session starts with the AI reading 30+ files to understand your project.
+1. AI reads your config files
+2. AI reads your main modules
+3. AI reads your tests
+4. AI reads your dependencies
+5. AI finally understands your project
+6. You ask your question
 
-That's 5,000-15,000 tokens of pure waste — every. single. time.
-
-For a team of 10, that's $200-500/month in tokens doing nothing.
+Steps 1-5: $0.03-0.30 of tokens doing nothing useful.
 
 ## Tweet 3 (solution):
-ai-context analyzes your codebase ONCE and generates a compact context document:
+contextly analyzes your codebase ONCE and generates a ~300 token context file:
 
 • Architecture overview
 • Entry points
 • Code conventions (naming, style)
-• Dependencies
-• Design patterns
+• Dependencies with versions
+• Design patterns (FastAPI, Express, etc.)
 • Common gotchas
 
-The file goes in your repo. Every AI session starts with full context instantly.
+The file goes in your repo. Every AI session starts instantly.
 
 ## Tweet 4 (demo):
-How it works:
-
 ```bash
-pip install ai-context
+pip install contextly
 cd your-project
-ai-context generate
+contextly generate
 ```
 
-That's it. Generates CLAUDE.md (or .cursorrules, or Copilot instructions).
+Output on a real project:
+- Context tokens: 342
+- Source tokens it replaces: 24,100
+- Reduction: 98.6%
 
-On a real project: 295 context tokens vs 6,900 source tokens.
-
-95.7% reduction. Same quality.
+Run `contextly cost` to see exact $ savings per provider.
 
 ## Tweet 5 (multi-tool):
-Works with:
-• Claude Code → generates CLAUDE.md
-• Cursor → generates .cursorrules
-• GitHub Copilot → generates .github/copilot-instructions.md
-• Any AI tool → generic CONTEXT.md
+Works with everything:
+• Claude Code → CLAUDE.md
+• Cursor → .cursorrules
+• GitHub Copilot → .github/copilot-instructions.md
+• Any AI tool → CONTEXT.md
 
-Also includes `ai-context cost` to show exact $ savings per provider.
+Also detects: naming conventions, test frameworks, dependencies, patterns, gotchas.
 
 ## Tweet 6 (CTA):
 Open source. MIT licensed. 30/30 tests passing.
 
-Would love your feedback:
-⭐ https://github.com/sanyamk23/ai-context
+⭐ https://github.com/sanyamk23/contextly
 
 What other AI coding cost problems should I tackle next?

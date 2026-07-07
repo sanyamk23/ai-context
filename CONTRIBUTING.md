@@ -1,12 +1,12 @@
-# Contributing to ai-context
+# Contributing to contextly
 
 Thanks for your interest in contributing! Here's how to get started.
 
 ## Development Setup
 
 ```bash
-git clone https://github.com/sanyamk23/ai-context.git
-cd ai-context
+git clone https://github.com/sanyamk23/contextly.git
+cd contextly
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
@@ -23,7 +23,7 @@ pytest -v                 # verbose output
 ## Project Structure
 
 ```
-ai_context/
+contextly/
 ├── analyzer/       # Code analysis (scanner, AST, deps, patterns)
 ├── generator/      # Context document generation + templates
 ├── cost/           # Token cost estimation
@@ -33,7 +33,7 @@ ai_context/
 
 ## Adding a New Output Format
 
-1. Create a new Jinja2 template in `ai_context/generator/templates/`
+1. Create a new Jinja2 template in `contextly/generator/templates/`
 2. Add the format to `TEMPLATE_MAP` and `OUTPUT_MAP` in `generator/context.py`
 3. Add a Click choice in `cli.py`
 4. Add tests

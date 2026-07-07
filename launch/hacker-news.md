@@ -1,30 +1,33 @@
 # Hacker News — Show HN Post
 
 ## Title (copy this):
-Show HN: ai-context – Stop re-explaining your codebase to AI every session (saves 95% on context tokens)
+Show HN: contextly – Your AI tools are reading your entire codebase every session. Stop that.
 
 ## Body (copy this):
 
 Hey HN,
 
-Every time I start a Claude Code / Cursor / Copilot session, the AI wastes thousands of tokens reading my codebase to understand what it does. That's real money every session, and for a team it adds up fast.
+I noticed something annoying: every time I start a Claude Code / Cursor / Copilot session, the AI wastes thousands of tokens reading my entire codebase to understand what it does. That's real money every session — $0.02-0.30 per session just on context loading. For a team of 10 devs, that adds up to hundreds per month in pure waste.
 
-I built ai-context [0] to fix this. It scans your repo once and generates a compact context document (~300 tokens) that tells the AI everything it needs — architecture, entry points, conventions, dependencies, patterns, gotchas.
+I built contextly [0] to fix this. It scans your repo once and generates a compact context document (~300 tokens) that tells the AI everything it needs — architecture, entry points, conventions, dependencies, patterns, gotchas.
+
+```bash
+pip install contextly
+cd your-project
+contextly generate
+```
 
 The generated file (CLAUDE.md, .cursorrules, etc.) goes in your repo and is automatically used by the AI tool.
 
-What it does:
-- Scans directory structure, respecting .gitignore
-- AST-level code analysis (Python, JS, TS, Go, Rust, etc.)
+Key features:
+- AST-level code analysis (Python, JS, TS, Go, Rust...)
 - Detects naming conventions, test frameworks, patterns
-- Generates tool-specific output for Claude Code, Cursor, Copilot
-- Shows exact cost savings per provider
+- Tool-specific output for Claude Code, Cursor, Copilot
+- `contextly cost` shows exact $ savings per provider
+- CI integration via `contextly check`
 
-Install: `pip install ai-context`
-Use: `ai-context generate`
-
-Tested on itself: 295 context tokens vs 6,900 source tokens = 95.7% reduction.
+Tested on itself: 342 context tokens vs 24,100 source tokens = 98.6% reduction.
 
 Curious what HN thinks — especially about what else could reduce AI coding costs.
 
-[0] https://github.com/sanyamk23/ai-context
+[0] https://github.com/sanyamk23/contextly

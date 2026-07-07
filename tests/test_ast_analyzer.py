@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from ai_context.analyzer.ast_analyzer import analyze_codebase, _analyze_python, _analyze_js_ts
-from ai_context.analyzer.scanner import FileInfo
+from contextly.analyzer.ast_analyzer import analyze_codebase, _analyze_python, _analyze_js_ts
+from contextly.analyzer.scanner import FileInfo
 
 
 def test_analyze_python_basic() -> None:

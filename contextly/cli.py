@@ -1,4 +1,4 @@
-"""ai-context CLI — generate optimized AI context for your codebase."""
+"""contextly CLI — generate optimized AI context for your codebase."""
 
 from __future__ import annotations
 
@@ -13,19 +13,19 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from ai_context import __version__
-from ai_context.analyzer.ast_analyzer import analyze_codebase
-from ai_context.analyzer.deps import analyze_dependencies
-from ai_context.analyzer.patterns import detect_conventions
-from ai_context.analyzer.scanner import scan_codebase
-from ai_context.cost.estimator import estimate_cost_per_session, estimate_tokens
-from ai_context.generator.context import OUTPUT_MAP, ContextBuilder, generate_context
+from contextly import __version__
+from contextly.analyzer.ast_analyzer import analyze_codebase
+from contextly.analyzer.deps import analyze_dependencies
+from contextly.analyzer.patterns import detect_conventions
+from contextly.analyzer.scanner import scan_codebase
+from contextly.cost.estimator import estimate_cost_per_session, estimate_tokens
+from contextly.generator.context import OUTPUT_MAP, ContextBuilder, generate_context
 
 console = Console()
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="ai-context")
+@click.version_option(version=__version__, prog_name="contextly")
 def main() -> None:
     """Generate optimized AI context for your codebase.
 
@@ -79,7 +79,7 @@ def generate(
     root = directory or Path.cwd()
     output_path = Path(output) if output else Path(OUTPUT_MAP[fmt])
 
-    console.print(f"\n[bold cyan]ai-context[/] — analyzing [bold]{root}[/]\n")
+    console.print(f"\n[bold cyan]contextly[/] — analyzing [bold]{root}[/]\n")
 
     # Step 1: Scan
     with console.status("[bold green]Scanning codebase..."):
@@ -202,7 +202,7 @@ def analyze(directory: Optional[Path], as_json: bool) -> None:
 )
 @click.option("--team", is_flag=True, help="Show team-wide estimates (50 devs).")
 def cost(directory: Optional[Path], team: bool) -> None:
-    """Estimate token cost savings from using ai-context."""
+    """Estimate token cost savings from using contextly."""
     root = directory or Path.cwd()
 
     with console.status("[bold green]Analyzing..."):
@@ -229,7 +229,7 @@ def cost(directory: Optional[Path], team: bool) -> None:
 
     console.print(f"\n[bold cyan]Cost Savings Estimate[/]\n")
     console.print(f"  Tokens to explain codebase [dim](without context)[/]: [bold]{_fmt_tokens(source_tokens)}[/]")
-    console.print(f"  Tokens with [bold]ai-context[/]: [bold]{_fmt_tokens(context_tokens)}[/]")
+    console.print(f"  Tokens with [bold]contextly[/]: [bold]{_fmt_tokens(context_tokens)}[/]")
     console.print(f"  Tokens saved per session: [bold green]{_fmt_tokens(source_tokens - context_tokens)}[/]\n")
 
     table = Table(title="Savings by Provider", show_lines=True)
@@ -286,11 +286,11 @@ def check(directory: Optional[Path]) -> None:
             age_days = (time.time() - mtime) / 86400
 
             if age_days > 7:
-                console.print(f"  [yellow]Warning:[/] {filename} is {age_days:.0f} days old. Consider running `ai-context generate --update`")
+                console.print(f"  [yellow]Warning:[/] {filename} is {age_days:.0f} days old. Consider running `contextly generate --update`")
             else:
                 console.print(f"  [green]Fresh[/] ({age_days:.1f} days old)")
 
-    console.print("\n[dim]Tip: Add `ai-context check` to your CI pipeline[/]")
+    console.print("\n[dim]Tip: Add `contextly check` to your CI pipeline[/]")
 
 
 def _print_stats(stats: dict) -> None:
